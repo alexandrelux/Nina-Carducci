@@ -84,6 +84,8 @@ body {
 	font-weight: 800;
 	font-style: italic;
 	width: 60%;
+	font-size: 1rem;
+	line-height: 1.2;
 }
 #about-me p {
 	width: 80%;
@@ -97,7 +99,7 @@ body {
 	justify-content: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
+	color: #000;
 	background-color: #BEB45A;
 	border-radius:0 ;
 }
@@ -143,7 +145,7 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-
+	font-size: calc(1.375rem + 1.5vw);
 }
 .quote__author {
 	font-family: Spectral;
@@ -238,6 +240,13 @@ form textarea {
 input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
+}
+
+.service__price {
+	font-size: calc(1.275rem + 0.3vw);
+	line-height: 1.2;
+	font-weight: 500;
+	margin-bottom: 8px;
 }
 
 @media all and (max-width: 1180px) {
@@ -350,3 +359,6 @@ input[type="submit"] {
 	}
 }
 
+h2 {
+	font-size: calc(1.3rem + 0.6vw);
+}
