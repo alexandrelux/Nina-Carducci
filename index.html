@@ -2,8 +2,10 @@
 <html lang="fr">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/style.min.css">
+	<link rel="stylesheet" href="./assets/modal.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -20,10 +22,9 @@
 		/>
 	</noscript>
 	<meta charset="UTF-8">
-	<script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="./assets/maugallery.js"></script>
-	<script src="./assets/scripts.js"></script>
+	<script src="./assets/gallery.min.js"></script>
+	<script src="./assets/modal.min.js"></script>
+	<script src="./assets/carousel.min.js"></script>
 	<title class="name">Nina Carducci</title>
 	<meta name="title" content="Nina Carducci">
 	<meta name="description" content="Photographe professionnelle à Bordeaux, spécialisée en mariages, portraits et événements. Capturez vos moments précieux.">
@@ -87,7 +88,6 @@
 	</div>
 </div>
 <div id="header">
-
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -143,28 +143,169 @@
 	</div>
 </div>
 <div id="gallery">
-	<h2 class="title">Portfolio</h2>
-	<div class="container py-3">
-		<div class="gallery" style="display: none">
-			<img data-gallery-tag="Concert" alt="Concert rouge" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp"/>
-			<img data-gallery-tag="Entreprises" alt="Entreprises Homme portrait" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp"/>
-			<img data-gallery-tag="Entreprises" alt="Entreprises groupe salarié travaillant" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp"/>
-			<img data-gallery-tag="Mariages" alt="Main" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp"/>
-			<img data-gallery-tag="Portrait" alt="Portrait Homme noir" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp"/>
-			<img data-gallery-tag="Mariages" alt="Couple marchant avec fleur" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp"/>
-			<img data-gallery-tag="Portrait" alt="Femme à lunette" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg-443cl1uR_8-unsplash.webp"/>
-			<img data-gallery-tag="Concert" alt="Chanteur" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp"/>
-			<img data-gallery-tag="Entreprises" alt="Salarié travaillant avec PC" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp"/>
-		</div>
-	</div>
-	<div class="quote">
-		<figure>
-			<blockquote>
-				<p class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou qu’un fait est traduit en photo, il cesse d’être un fait pour devenir une opinion. L’inexactitude n’existe pas en photographie. Toutes les photos sont exactes. Aucune d’elles n’est la vérité.</p>
-			</blockquote>
-			<figcaption class="quote__author">- Richard Avedon</figcaption>
-		</figure>
-	</div>
+    <h2 class="title">Portfolio</h2>
+    <div class="container py-3">
+        <div class="gallery" style="">
+            <ul class="my-4 tags-bar nav nav-pills">
+                <li class="nav-item">
+                    <span
+                        class="nav-link active"
+                        data-images-toggle="all"
+                        >Tous</span
+                    >
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" data-images-toggle="Concert"
+                        >Concert</span
+                    >
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" data-images-toggle="Entreprises"
+                        >Entreprises</span
+                    >
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" data-images-toggle="Mariages"
+                        >Mariages</span
+                    >
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" data-images-toggle="Portrait"
+                        >Portrait</span
+                    >
+                </li>
+            </ul>
+
+            <div class="gallery-items-row row">
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="1"
+                        data-gallery-tag="Concert"
+                        alt="Concert rouge"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="2"
+                        data-gallery-tag="Entreprises"
+                        alt="Entreprises Homme portrait"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="3"
+                        data-gallery-tag="Entreprises"
+                        alt="Entreprises groupe salarié travaillant"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="4"
+                        data-gallery-tag="Mariages"
+                        alt="Main"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="5"
+                        data-gallery-tag="Portrait"
+                        alt="Portrait Homme noir"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="6"
+                        data-gallery-tag="Mariages"
+                        alt="Couple marchant avec fleur"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="7"
+                        data-gallery-tag="Portrait"
+                        alt="Femme à lunette"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/portraits/nino-van-prattenburg-443cl1uR_8-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="8"
+                        data-gallery-tag="Concert"
+                        alt="Chanteur"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp"
+                    />
+                </div>
+                <div
+                    class="item-column mb-4 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
+                >
+                    <img
+						data-image-id="9"
+                        data-gallery-tag="Entreprises"
+                        alt="Salarié travaillant avec PC"
+                        class="gallery-item img-fluid"
+                        src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp"
+                    />
+                </div>
+            </div>
+			<div class="modal fade" id="myAwesomeLightbox" tabindex="-1" role="dialog" aria-modal="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;">&lt;</div>
+							<div class="modal-img">
+								<img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique" src="">
+							</div>
+							<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;">&gt;</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+    <div class="quote">
+        <figure>
+            <blockquote>
+                <p class="quote__text">
+                    Un portrait n’est pas une ressemblance. Dès lors qu’une
+                    émotion ou qu’un fait est traduit en photo, il cesse d’être
+                    un fait pour devenir une opinion. L’inexactitude n’existe
+                    pas en photographie. Toutes les photos sont exactes. Aucune
+                    d’elles n’est la vérité.
+                </p>
+            </blockquote>
+            <figcaption class="quote__author">- Richard Avedon</figcaption>
+        </figure>
+    </div>
 </div>
 <div id="services">
 	<h2 class="title">Mes services</h2>
@@ -230,5 +371,6 @@
 		</div>
 	</div>
 </div>
+<div class="modal-backdrop fade"></div>
 </body>
 </html>
